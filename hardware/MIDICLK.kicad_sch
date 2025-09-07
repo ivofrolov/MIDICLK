@@ -8306,7 +8306,7 @@
 				)
 			)
 		)
-		(property "Value" "10u"
+		(property "Value" "100n"
 			(at 135.89 92.71 90)
 			(effects
 				(font

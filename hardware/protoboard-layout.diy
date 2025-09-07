@@ -18,10 +18,10 @@
       <value></value>
       <controlPoints>
         <point x="5.6" y="1.9"/>
-        <point x="6.5" y="7.2"/>
+        <point x="6.5" y="7.0"/>
       </controlPoints>
       <firstPoint x="5.6" y="1.9"/>
-      <secondPoint x="6.5" y="7.2"/>
+      <secondPoint x="6.5" y="7.0"/>
       <boardColor hex="f8ebb3"/>
       <borderColor hex="ada47d"/>
       <coordinateColor hex="b6b6b6"/>
@@ -45,10 +45,10 @@
       <value></value>
       <controlPoints>
         <point x="6.9" y="1.9"/>
-        <point x="7.8" y="7.2"/>
+        <point x="7.8" y="7.0"/>
       </controlPoints>
       <firstPoint x="6.9" y="1.9"/>
-      <secondPoint x="7.8" y="7.2"/>
+      <secondPoint x="7.8" y="7.0"/>
       <boardColor hex="f8ebb3"/>
       <borderColor hex="ada47d"/>
       <coordinateColor hex="b6b6b6"/>
@@ -1584,7 +1584,7 @@
       <borderColor hex="595959"/>
       <labelColor hex="ffffff"/>
       <indentColor hex="595959"/>
-      <displayNumbers>NO</displayNumbers>
+      <displayNumbers>DIP_MIRROR</displayNumbers>
     </diylc.semiconductors.DIL__IC>
     <diylc.semiconductors.DiodePlastic>
       <name>D1</name>
@@ -1767,7 +1767,7 @@
       <borderColor hex="595959"/>
       <labelColor hex="ffffff"/>
       <indentColor hex="595959"/>
-      <displayNumbers>NO</displayNumbers>
+      <displayNumbers>DIP_MIRROR</displayNumbers>
     </diylc.semiconductors.DIL__IC>
     <diylc.passive.Resistor>
       <name>R8</name>
@@ -2226,19 +2226,45 @@
       <horizontalAlignment>LEFT</horizontalAlignment>
       <value>J1</value>
     </diylc.misc.WrapLabel>
+    <diylc.misc.WrapLabel>
+      <name>L8</name>
+      <controlPoints>
+        <point x="7.9" y="2.3"/>
+        <point x="9.395" y="2.8"/>
+      </controlPoints>
+      <firstPoint x="7.9" y="2.3"/>
+      <secondPoint x="9.395" y="2.8"/>
+      <font name="Dialog" size="14" style="0"/>
+      <color hex="000000"/>
+      <horizontalAlignment>LEFT</horizontalAlignment>
+      <value>Note that pin numbers are mirrored because I made a mistake somehow.</value>
+    </diylc.misc.WrapLabel>
+    <diylc.misc.WrapLabel>
+      <name>L9</name>
+      <controlPoints>
+        <point x="4.3" y="3.4"/>
+        <point x="5.795" y="3.9"/>
+      </controlPoints>
+      <firstPoint x="4.3" y="3.4"/>
+      <secondPoint x="5.795" y="3.9"/>
+      <font name="Dialog" size="14" style="0"/>
+      <color hex="000000"/>
+      <horizontalAlignment>LEFT</horizontalAlignment>
+      <value>Note that pin numbers are mirrored because I made a mistake somehow.</value>
+    </diylc.misc.WrapLabel>
   </components>
   <groups>
     <set>
+      <diylc.shapes.Rectangle reference="../../../components/diylc.shapes.Rectangle[3]"/>
       <diylc.connectivity.Dot reference="../../../components/diylc.connectivity.Dot[20]"/>
       <diylc.connectivity.Dot reference="../../../components/diylc.connectivity.Dot[21]"/>
-      <diylc.shapes.Rectangle reference="../../../components/diylc.shapes.Rectangle[3]"/>
       <diylc.connectivity.Dot reference="../../../components/diylc.connectivity.Dot[22]"/>
     </set>
     <set>
       <diylc.connectivity.Dot reference="../../../components/diylc.connectivity.Dot[34]"/>
-      <diylc.shapes.Ellipse reference="../../../components/diylc.shapes.Ellipse[2]"/>
-      <diylc.connectivity.Dot reference="../../../components/diylc.connectivity.Dot[35]"/>
       <diylc.connectivity.Dot reference="../../../components/diylc.connectivity.Dot[36]"/>
+      <diylc.connectivity.Dot reference="../../../components/diylc.connectivity.Dot[35]"/>
+      <diylc.shapes.Ellipse reference="../../../components/diylc.shapes.Ellipse[2]"/>
     </set>
   </groups>
   <lockedLayers/>
