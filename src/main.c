@@ -14,8 +14,8 @@
                  └─────┘
  */
 void setup_io() {
-  DDRB = _BV(DDB2) | _BV(DDB1); // pins 6 and 7 are outputs, others are inputs
-  PORTB = 0;                    // input pull-up resistors disabled
+  DDRB = _BV(DDB2) | _BV(DDB1);      // pins 6 and 7 are outputs, others are inputs
+  PORTB = _BV(PORTB2) | _BV(PORTB1); // set clock outputs high, pull-ups disabled
 }
 
 #define PPQN 24
@@ -27,18 +27,18 @@ void setup_io() {
 uint8_t CLKOPTS[NOPTS] = {
   1,        // original clock
   PPQN/8,   // 32nd
-  PPQN/4,   // 16th
   PPQN/6,   // triplet 16th
-  PPQN/2,   // 8th
+  PPQN/4,   // 16th
   PPQN/3,   // triplet 8th
-  PPQN,     // quarter
+  PPQN/2,   // 8th
   PPQN*2/3, // triplet quarter
+  PPQN,     // quarter
   PPQN*2,   // half
   PPQN*4,   // whole
   PPQN*8,   // double whole
 };
-uint8_t clksel1 = 2; // 16th
-uint8_t clksel2 = 6; // quarter
+uint8_t clksel1 = 3; // 16th
+uint8_t clksel2 = 7; // quarter
 uint8_t clkcnt1 = 0;
 uint8_t clkcnt2 = 0;
 
@@ -52,8 +52,8 @@ void setup_clock_trigger_timer() {
 
 /* Turn off clock trigger. */
 ISR (TIMER1_COMPA_vect) {
-  PORTB &= ~(_BV(PORTB2) | _BV(PORTB1)); // set clock low
-  TIMSK &= ~_BV(OCIE1A);                 // disable output compare match interrupt
+  PORTB |= _BV(PORTB2) | _BV(PORTB1); // set clocks high
+  TIMSK &= ~_BV(OCIE1A);              // disable output compare match interrupt
 }
 
 /* Activate trigger and start timer to turn the signal off. */
@@ -65,15 +65,15 @@ void trigger_clocks() {
   }
 
   if (clkcnt1 == 0) {
-    PORTB |= _BV(PORTB1); // set clock high
+    PORTB &= ~_BV(PORTB1); // set clock low
     clkcnt1 = CLKOPTS[clksel1];
   }
+  --clkcnt1;
+
   if (clkcnt2 == 0) {
-    PORTB |= _BV(PORTB2); // set clock high
+    PORTB &= ~_BV(PORTB2); // set clock low
     clkcnt2 = CLKOPTS[clksel2];
   }
-
-  --clkcnt1;
   --clkcnt2;
 }
 
@@ -212,6 +212,7 @@ ISR (USI_OVF_vect) {
 
 /* MAIN LOOP */
 int main() {
+  cli();
   setup_io();
   setup_clock_trigger_timer();
   reset_clocks();

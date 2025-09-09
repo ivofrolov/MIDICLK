@@ -34,7 +34,7 @@
 
 ;; MCU
 (U1 ATtiny85 :pins PB5 PB3 PB4 GND PB0 PB1 PB2 +5V)
-((U1 :pins +5V) (C1 10u) (U1 :pins GND))
+((U1 :pins +5V) (C1 100n) (U1 :pins GND))
 ;; (+5V (U1 :pins +5V))
 ;; (GND (U1 :pins GND))
 
