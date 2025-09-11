@@ -3,3 +3,6 @@
 *.kicad_*.lck
 fp-info-cache
 fp-lib-table
+hardware/database
+
+hardware/export
