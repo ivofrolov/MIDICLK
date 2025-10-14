@@ -2,7 +2,7 @@
 
 4HP eurorack module that provides two trigger outputs with an adjustable rhythm based on the incoming MIDI timing clock.
 
-![Description.](/pages/description.svg)
+![Description.](/docs/description.svg)
 
 MIDI clock (24 PPQN) is read from TRS type A input. MIDI start message resets all clocks.
 
