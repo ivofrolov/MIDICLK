@@ -14,7 +14,7 @@ Clock outputs provide about 3 milliseconds triggers.
 
 ## Hardware
 
-See [BOM](https://ivofrolov.github.io/midiclk/ibom.html) and board layout.
+See [BOM](https://ivofrolov.github.io/MIDICLK/ibom.html) and board layout.
 
 Schematic and PCB files are in the [hardware](/hardware) KiCad project folder, which also contains [panel design](/hardware/Panel.FCStd) FreeCad file.
 
