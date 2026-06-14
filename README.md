@@ -20,9 +20,14 @@ Schematic and PCB files are in the [hardware](/hardware) KiCad project folder, w
 
 ## Firmware
 
-Project relies on [platformio](https://platformio.org/) build system. Though it consists of [single c file](/src/main.c) and can be built using any AVR compiler.
+Project is built using `make` in debug mode by default. In order to change mode use `make ENV=release build`. The same applies to other Makefile variables. Available targets are
 
-In release mode reset should be disabled (RSTDISBL fuse bit should be programmed) due to lack of available pins.
+  * `build` - compile firmware.elf file
+  * `size` - display firmware size in bytes
+  * `fuses` - program chip fuses bits
+  * `upload` - write firmware to chip memory
+
+In release mode reset is disabled (RSTDISBL fuse is programmed) due to lack of available pins.
 
 # More ideas
 
